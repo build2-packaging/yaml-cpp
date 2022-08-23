@@ -6,6 +6,7 @@ license: MIT
 description-file: README.md
 url: https://github.com/jbeder/yaml-cpp
 package-url: https://github.com/build2-packaging/yaml-cpp/
+requires: c++11
 
 depends: * build2 >= 0.13.0
 depends: * bpkg >= 0.13.0
