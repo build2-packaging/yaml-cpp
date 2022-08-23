@@ -1,6 +1,6 @@
 ./ : lib{yaml-cpp}
 
-lib{yaml-cpp}: include/hxx{**} hxx{version}
+lib{yaml-cpp}: include/hxx{**} src/hxx{**} hxx{version}
 lib{yaml-cpp}: src/cxx{**}
 
 hxx{version} : in{version} $src_root/manifest
