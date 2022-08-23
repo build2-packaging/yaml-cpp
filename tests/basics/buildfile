@@ -1,0 +1,5 @@
+import libs = yaml-cpp%lib{yaml-cpp}
+
+./ : exe{driver} : {cxx}{driver} $libs
+
+cxx.poptions += -DYAML_CPP_STATIC_DEFINE
