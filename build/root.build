@@ -5,11 +5,5 @@ using cxx
 hxx{*}: extension = h
 cxx{*}: extension = cpp
 
-if ($cxx.target.class == 'windows')
-{
-  assert ($bin.lib != 'shared') 'only static variant can be built on Windows'
-  bin.lib = static
-}
-
 # The test target for cross-testing (running tests under Wine, etc).
 test.target = $cxx.target

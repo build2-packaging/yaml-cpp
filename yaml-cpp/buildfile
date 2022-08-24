@@ -9,17 +9,22 @@ hxx{version} : in{version} $src_root/manifest
   clean = ($src_root != $out_root)
   install = include/yaml-cpp
 }
-
-# Build options.
 cxx.poptions =+ "-I$src_base/include" "-I$out_root" "-I$src_root"
-cxx.poptions += -DYAML_CPP_STATIC_DEFINE
 
-# Export options.
 lib{yaml-cpp}:
 {
   cxx.export.poptions = "-I$src_base/include" "-I$out_root" "-I$src_root"
 }
-libs{yaml-cpp}: cxx.export.poptions += -DYAML_CPP_STATIC_DEFINE
+
+liba{yaml-cpp}: 
+{
+  cxx.export.poptions += -DYAML_CPP_STATIC_DEFINE
+}
+
+libs{yaml-cpp}: 
+{
+  cxx.export.poptions += -DYAML_BUILD_SHARED_LIBS
+}
 
 if $version.pre_release
   lib{yaml-cpp}: bin.lib.version = @"-$version.project_id"
