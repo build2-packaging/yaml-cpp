@@ -1,6 +1,7 @@
-#include <cassert>
-
 #include <yaml-cpp/yaml.h>
+
+#undef NDEBUG
+#include <cassert>
 
 int main ()
 {

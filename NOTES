@@ -1,0 +1,48 @@
+Legend: `+` items are done, `-` items are still TODO.
+
+- The overall structure is not canonical. While there is nothing critical
+  about it, we prefer the packages to match the canonical structure if
+  possible.
+
+  I understand you copied the structure from one of the existing packages.
+  The preferred approach is to generate a "skeleton" using bdep-new with
+  the a structure that matches upstream as much as possible based on this
+  guide:
+
+  https://build2.org/bdep/doc/bdep-new.xhtml#src-layout
+
+  And then fill it in with upstream and tweak where necessary.
+
+  I think it make sense to redo it (see below).
+
+- I am pretty sure the DLL exporting setup is wrong. For example,
+  the YAML_CPP_STATIC_DEFINE and DYAML_BUILD_SHARED_LIBS set in buildfile
+  are not mentioned anywhere in the source tree.
+
+  If you don't have a good understanding of DLL symbol exporting the
+  I suggest a two-step approach:
+
+  1. First study the "canonical" symbol exporting setup in the bdep-new
+     generated project. It it reasonably consistent and well-commented
+     (unlike a lot of third-party projects).
+
+  2. Once you have a good mental model of this, look into yaml-cpp/dll.h
+     and see what changes needs to be made to the canonical setup to make
+     it work for yaml-cpp. Normally you just need to rename or remove the
+     macros defined in buildfile.
+
+- Your buildfile install private headers. I think if you convert to the
+  canonical setup, things will sort themselves out automatically.
+
++ It makes sense to use the same source file extensions in tests as
+  upstream.
+
+- Quite a few files don't have final newline.
+
+- You can drop repositories.manifest since this library is unlike to
+  ever have any dependencies.
+
+- I would drop the generated version.h file since anyone who relies on
+  it won't be able to use system-installed (e.g., from Debian package)
+  version. I think the best way add a version is to file an issue with
+  upstream and ask them to add a suitable macro.

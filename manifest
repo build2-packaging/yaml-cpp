@@ -1,12 +1,12 @@
 : 1
 name: yaml-cpp
 version: 0.7.0
-summary: "yaml-cpp is a YAML parser and emitter in C++ matching the YAML 1.2 spec."
+summary: yaml-cpp is a YAML parser and emitter in C++ matching the YAML 1.2 spec
 license: MIT
 description-file: README.md
 url: https://github.com/jbeder/yaml-cpp
 package-url: https://github.com/build2-packaging/yaml-cpp/
 requires: c++11
 
-depends: * build2 >= 0.13.0
-depends: * bpkg >= 0.13.0
+depends: * build2 >= 0.15.0
+depends: * bpkg >= 0.15.0

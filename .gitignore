@@ -9,9 +9,14 @@
 *.d
 *.t
 *.i
+*.i.*
 *.ii
+*.ii.*
 *.o
 *.obj
+*.gcm
+*.pcm
+*.ifc
 *.so
 *.dll
 *.a
@@ -23,5 +28,3 @@
 *.exe.dlls/
 *.exe.manifest
 *.pc
-Footer
-© 2022 GitHu
