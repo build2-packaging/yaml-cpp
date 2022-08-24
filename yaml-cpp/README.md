@@ -1,3 +1,1 @@
-# yaml-cpp
-
-C++ library
+../upstream/README.md
