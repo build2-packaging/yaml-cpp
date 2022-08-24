@@ -1,12 +1,10 @@
 : 1
 name: yaml-cpp
-version: 0.1.0-a.0.z
-summary: yaml-cpp C++ library
-license: other: proprietary ; Not free/open source.
+version: 0.7.0
+summary: yaml-cpp is a YAML parser and emitter in C++ matching the YAML 1.2 spec
+license: MIT
 description-file: README.md
-url: https://example.org/yaml-cpp
-email: Emil.Rosenquist@gmail.com
-#build-error-email: Emil.Rosenquist@gmail.com
+url: https://github.com/jbeder/yaml-cpp
 depends: * build2 >= 0.15.0
 depends: * bpkg >= 0.15.0
-#depends: libhello ^1.0.0
+requires: c++11
