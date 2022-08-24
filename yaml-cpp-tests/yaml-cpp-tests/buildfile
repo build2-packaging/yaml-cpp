@@ -1,5 +1,6 @@
 import libs = yaml-cpp%lib{yaml-cpp}
 import libs += gtest%lib{gtest}
+import libs += gmock%lib{gmock}
 
 exe{yaml-cpp-tests}: test/{hxx cxx}{**} $libs
 
