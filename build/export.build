@@ -1,6 +1,0 @@
-$out_root/
-{
-  include yaml-cpp/
-}
-
-export $out_root/yaml-cpp/$import.target
