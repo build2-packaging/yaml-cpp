@@ -1,0 +1,6 @@
+project = yaml-cpp
+
+using version
+using config
+using install
+using dist
