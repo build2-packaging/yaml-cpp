@@ -1,0 +1,11 @@
+: 1
+name: yaml-cpp-tests
+version: 0.7.0
+project: yaml-cpp
+summary: yaml-cpp-tests C++ executable
+license: MIT
+description-file: README.md
+url: https://github.com/jbeder/yaml-cpp/tree/yaml-cpp-0.7.0/test
+depends: * build2 >= 0.15.0
+depends: * bpkg >= 0.15.0
+depends: gtest ^1.11.0

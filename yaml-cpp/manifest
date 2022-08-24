@@ -7,4 +7,5 @@ description-file: README.md
 url: https://github.com/jbeder/yaml-cpp
 depends: * build2 >= 0.15.0
 depends: * bpkg >= 0.15.0
+tests: yaml-cpp-tests == $
 requires: c++11
