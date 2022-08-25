@@ -2,7 +2,8 @@ import libs = yaml-cpp%lib{yaml-cpp}
 import libs += gtest%lib{gtest}
 import libs += gmock%lib{gmock}
 
-exe{yaml-cpp-tests}: test/{hxx cxx}{** -integration/emitter_test} $libs
+exe{yaml-cpp-tests}: test/{hxx cxx}{** -integration/emitter_test} \
+                     src_private_headers/hxx{**} $libs
 
 # Disable this test for GCC < 11 because it trips up a bug in handling
 # of raw string literals that contain `#`.
