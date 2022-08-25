@@ -26,10 +26,7 @@ src_pfx_src = [dir_path] $src_root/yaml-cpp/src/
 cxx.poptions =+ "-I$out_pfx_src" "-I$src_pfx_src" \
                 "-I$out_pfx_inc" "-I$src_pfx_inc"
 
-{hbmia obja}{*}: cxx.poptions += -DYAML_CPP_STATIC_BUILD
-{hbmis objs}{*}: cxx.poptions += -DYAML_CPP_SHARED_BUILD
-
-if ($c.target.class == 'windows')
+if ($cxx.target.class == 'windows')
 {
   {hbmis objs}{*}: cxx.poptions += -DYAML_CPP_DLL -Dyaml_cpp_EXPORTS
 }
@@ -42,13 +39,11 @@ lib{yaml-cpp}:
   cxx.export.libs = $intf_libs
 }
 
-liba{yaml-cpp}: cxx.export.poptions += -DYAML_CPP_STATIC
-libs{yaml-cpp}: cxx.export.poptions += -DYAML_CPP_SHARED
-
-if ($c.target.class == 'windows')
+if ($cxx.target.class == 'windows')
 {
-  libs{yaml-cpp}: cxx.export.poptions += -DYAML_CPP_DLL -Dyaml_cpp_EXPORTS
+  libs{yaml-cpp}: cxx.export.poptions += -DYAML_CPP_DLL
 }
+
 # For pre-releases use the complete version to make sure they cannot be used
 # in place of another pre-release or the final version. See the version module
 # for details on the version.* variable values.

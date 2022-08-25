@@ -2,7 +2,7 @@
 name: yaml-cpp-tests
 version: 0.7.0
 project: yaml-cpp
-summary: yaml-cpp-tests C++ executable
+summary: Tests package for yaml-cpp library
 license: MIT
 description-file: README.md
 url: https://github.com/jbeder/yaml-cpp/tree/yaml-cpp-0.7.0/test

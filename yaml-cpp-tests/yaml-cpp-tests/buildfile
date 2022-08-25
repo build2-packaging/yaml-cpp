@@ -4,4 +4,4 @@ import libs += gmock%lib{gmock}
 
 exe{yaml-cpp-tests}: test/{hxx cxx}{** -integration/emitter_test} $libs
 
-cxx.poptions =+ "-I$src_base/src_private_headers" "-I$src_base/test" "-I$out_root" "-I$src_root"
+cxx.poptions =+ "-I$src_base/src_private_headers" "-I$src_base/test"
