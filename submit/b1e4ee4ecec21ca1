@@ -1,0 +1,6 @@
+: 1
+name: yaml-cpp-tests
+version: 0.7.0
+project: yaml-cpp
+summary: Tests package for yaml-cpp library
+license: MIT
