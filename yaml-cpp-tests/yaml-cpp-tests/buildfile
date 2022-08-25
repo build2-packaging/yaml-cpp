@@ -4,4 +4,10 @@ import libs += gmock%lib{gmock}
 
 exe{yaml-cpp-tests}: test/{hxx cxx}{** -integration/emitter_test} $libs
 
+# Disable this test for GCC < 11 because it trips up a bug in handling
+# of raw string literals that contain `#`.
+#
+exe{yaml-cpp-tests}: test/integration/cxx{emitter_test}: include = \
+  ($cxx.id != 'gcc' || $cxx.version.major >= 11)
+
 cxx.poptions =+ "-I$src_base/src_private_headers" "-I$src_base/test"
