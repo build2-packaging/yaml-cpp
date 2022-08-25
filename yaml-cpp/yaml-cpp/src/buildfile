@@ -43,7 +43,7 @@ lib{yaml-cpp}:
 }
 
 liba{yaml-cpp}: cxx.export.poptions += -DYAML_CPP_STATIC
-libs{yaml-cpp}: cxx.export.poptions += -DYAML_CPP_SHARED -DYAML_CPP_DLL -Dyaml_cpp_EXPORTS
+libs{yaml-cpp}: cxx.export.poptions += -DYAML_CPP_SHARED
 
 if ($c.target.class == 'windows')
 {
