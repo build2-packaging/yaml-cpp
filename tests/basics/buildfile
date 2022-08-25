@@ -1,3 +1,0 @@
-import libs = yaml-cpp%lib{yaml-cpp}
-
-./ : exe{driver} : {cxx}{driver} $libs

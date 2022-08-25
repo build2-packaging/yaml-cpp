@@ -1,0 +1,6 @@
+project = yaml-cpp-tests
+
+using version
+using config
+using test
+using dist

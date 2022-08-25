@@ -1,0 +1,5 @@
+yaml-cpp-tests
+
+# Testscript output directory (can be symlink).
+#
+test-yaml-cpp-tests
